@@ -1,0 +1,74 @@
+[
+  {
+    "question": "What is the primary purpose of Microsoft Fabric's governance and compliance features?",
+    "options": [
+      "To enhance user interface customization",
+      "To manage, protect, monitor, and improve discoverability of sensitive information",
+      "To increase storage capacity",
+      "To automate report generation"
+    ],
+    "answer": 1,
+    "explanation": "Microsoft Fabric's governance and compliance capabilities help manage, protect, monitor, and improve the discoverability of an organization's sensitive information.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/governance-compliance-overview"
+  },
+  {
+    "question": "What are the two main tabs featured in the OneLake catalog?",
+    "options": [
+      "Data and Reports",
+      "Explore and Govern",
+      "Settings and Configuration",
+      "Users and Permissions"
+    ],
+    "answer": 1,
+    "explanation": "The OneLake catalog features two tabs: Explore, for finding and using Fabric items, and Govern, for analyzing and monitoring data governance.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/onelake-catalog-overview"
+  },
+  {
+    "question": "What functionality does the 'Explore' tab in the OneLake catalog provide?",
+    "options": [
+      "It allows users to configure security settings",
+      "It provides insights into data governance",
+      "It helps users find, explore, and use Fabric items with filters and selectors",
+      "It manages user roles and permissions"
+    ],
+    "answer": 2,
+    "explanation": "The 'Explore' tab helps users find, explore, and use Fabric items, offering filters and selectors to narrow down the list.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/onelake-catalog-explore"
+  },
+  {
+    "question": "What insights does the 'Govern' tab in the OneLake catalog offer?",
+    "options": [
+      "User activity logs",
+      "Data storage metrics",
+      "Governance status of data and recommended actions for improvement",
+      "System performance statistics"
+    ],
+    "answer": 2,
+    "explanation": "The 'Govern' tab provides insights into the governance status of data and presents recommended actions to improve data governance.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/onelake-catalog-govern"
+  },
+  {
+    "question": "How does Microsoft Purview integrate with Microsoft Fabric?",
+    "options": [
+      "By providing additional storage options",
+      "Through seamless integration allowing governance of data lineage and metadata",
+      "By enhancing the user interface",
+      "Through offering advanced analytics tools"
+    ],
+    "answer": 1,
+    "explanation": "Microsoft Purview integrates with Microsoft Fabric to allow users to govern their entire data estate, including data lineage and metadata.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/microsoft-purview-fabric"
+  },
+  {
+    "question": "What is the purpose of registering a Microsoft Fabric tenant in Microsoft Purview?",
+    "options": [
+      "To enable user authentication",
+      "To capture metadata and lineage from Fabric items including Power BI",
+      "To increase data storage limits",
+      "To customize the Fabric user interface"
+    ],
+    "answer": 1,
+    "explanation": "Registering a Microsoft Fabric tenant in Microsoft Purview allows capturing metadata and lineage from Fabric items, including Power BI.",
+    "link": "https://learn.microsoft.com/en-us/purview/register-scan-fabric-tenant?context=%2Ffabric%2Fgovernance%2Fcontext%2Fcontext-purview&tabs=Scenario1"
+  }
+]
