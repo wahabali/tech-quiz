@@ -1,0 +1,123 @@
+[
+  {
+    "question": "A domain admin sets a domain-level default sensitivity label. Later, a Fabric item with an existing label is updated. Under which condition will the domain-level label override the existing one?",
+    "options": [
+      "If the existing label was manually applied with a lower priority",
+      "If the existing label was automatically applied and had a higher priority",
+      "If the existing label was automatically applied and had a lower priority",
+      "If the existing label was manually applied regardless of priority"
+    ],
+    "answer": 2,
+    "explanation": "Domain-level default sensitivity labels override existing labels only if the existing label was automatically applied and has a lower priority. Manually applied labels or higher-priority labels are preserved.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/domain-default-sensitivity-label"
+  },
+  {
+    "question": "You are designing a data governance strategy using Microsoft Purview for a multicloud enterprise. Which Fabric-integrated feature of Purview allows lineage mapping across data sources, semantic models, and reports?",
+    "options": [
+      "Microsoft Purview Data Loss Prevention",
+      "Microsoft Purview Data Map (Live View)",
+      "Microsoft Purview Audit",
+      "Microsoft Purview Compliance Manager"
+    ],
+    "answer": 1,
+    "explanation": "Microsoft Purview’s Data Map (Live View) enables metadata and lineage scanning of Fabric items and allows for end-to-end lineage tracking from data sources to Power BI reports.",
+    "link": "https://learn.microsoft.com/en-us/purview/live-view"
+  },
+  {
+    "question": "What happens if you apply a mandatory labeling policy in Microsoft Fabric for supported items?",
+    "options": [
+      "Users can skip labeling if they use APIs.",
+      "Users must label all items, including RDL and Scorecards.",
+      "Users must label all supported items before saving or editing them.",
+      "Users can import .pbix files without applying labels."
+    ],
+    "answer": 2,
+    "explanation": "Mandatory labeling policies enforce that users must label supported items before saving or editing them. However, RDL, Scorecards, and some others are excluded, and APIs/service principals are not affected.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/service-security-sensitivity-label-mandatory-label-policy"
+  },
+  {
+    "question": "A Fabric admin delegates domain-level settings. They want to enable item certification with domain-specific rules. Which action is required?",
+    "options": [
+      "Use tenant-level policies only",
+      "Enable certification and assign domain certifiers",
+      "Configure workspace-level certifiers",
+      "Enable default labeling at the workspace level"
+    ],
+    "answer": 1,
+    "explanation": "To override tenant settings, domain-level certification must be explicitly enabled, and certifiers must be assigned within the domain settings.",
+    "link": "https://learn.microsoft.com/en-us/fabric/admin/endorsement-setup#set-up-certification"
+  },
+  {
+    "question": "Which Microsoft Fabric feature is most appropriate for visualizing upstream data dependencies across multiple workspaces and identifying the potential impact of a change?",
+    "options": [
+      "Monitoring Hub",
+      "Purview Data Map",
+      "Lineage View with Impact Analysis",
+      "Purview Hub Semantic Report"
+    ],
+    "answer": 2,
+    "explanation": "The Lineage View in Fabric shows relationships between items and data sources. With Impact Analysis, users can assess the downstream impact of changes, making it ideal for managing dependencies.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/lineage"
+  }
+,
+  {
+    "question": "Your organization is planning to scan all Fabric lakehouses using Microsoft Purview. What is the correct authentication method for metadata scanning of Fabric lakehouses?",
+    "options": [
+      "Managed Identity or Delegated Authentication",
+      "Only Managed Identity is supported",
+      "Only Service Principal is supported",
+      "Service Principal or Azure Key Vault certificate"
+    ],
+    "answer": 2,
+    "explanation": "Scanning Fabric lakehouses requires Service Principal authentication. Managed Identity is not currently supported for lakehouses, even though it is for other Fabric items.",
+    "link": "https://learn.microsoft.com/en-us/purview/register-scan-power-bi-tenant#supported-scenarios-for-fabric-scans"
+  },
+  {
+    "question": "A Fabric admin notices sensitive financial data is being shared outside the organization. Which Fabric governance feature should they enable to detect and notify on such events?",
+    "options": [
+      "Enable default sensitivity labeling",
+      "Activate the OneLake catalog",
+      "Configure Data Loss Prevention (DLP) policies",
+      "Enable lineage view in Fabric"
+    ],
+    "answer": 2,
+    "explanation": "DLP policies automatically detect and flag sensitive data (e.g., financial info) in semantic models and notify or block sharing, which helps mitigate compliance risks.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/data-loss-prevention-overview"
+  },
+  {
+    "question": "Which best describes the purpose of enabling tags on Fabric items?",
+    "options": [
+      "To enforce domain-level access controls",
+      "To track audit logs per item",
+      "To improve discoverability and filtering in OneLake catalog",
+      "To trigger DLP rules for semantic models"
+    ],
+    "answer": 2,
+    "explanation": "Tags are configurable metadata labels that enhance discoverability by allowing users to filter and search Fabric items using business-relevant classifications.",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/tags"
+  },
+  {
+    "question": "A compliance officer wants to verify when a specific user accessed a Lakehouse. Which Microsoft Purview feature provides this audit trail?",
+    "options": [
+      "Purview Data Catalog",
+      "Purview Live View",
+      "Purview Audit",
+      "Purview Sensitivity Policy"
+    ],
+    "answer": 2,
+    "explanation": "Purview Audit captures detailed user activities such as accessing Lakehouses, Power BI reports, Spark usage, and more. It's designed for forensic and compliance investigations.",
+    "link": "https://learn.microsoft.com/en-us/fabric/admin/track-user-activities"
+  },
+  {
+    "question": "You are using the Monitoring Hub in Microsoft Fabric. Which of the following is NOT a capability of the Monitoring Hub?",
+    "options": [
+      "View scheduled pipeline refresh history",
+      "Track Spark job runs",
+      "View usage metrics for users across all workspaces",
+      "Monitor refresh status of data warehouse queries"
+    ],
+    "answer": 2,
+    "explanation": "While the Monitoring Hub shows activity for Fabric items you have access to (e.g., pipelines, Spark jobs, queries), it doesn't provide usage metrics across *all* users or *all* workspaces unless you're an admin with appropriate access.",
+    "link": "https://learn.microsoft.com/en-us/fabric/admin/monitoring-hub"
+  }
+]
