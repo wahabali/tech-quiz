@@ -87,7 +87,7 @@
 
     async function loadQuestionsFromFile() {
       try {
-        const response = await fetch("file:///C:/Users/WTS82020/Downloads/Tech Game/questions.json")
+        const response = await fetch("questions.json")
 
         if (!response.ok) throw new Error("Could not load questions.json");
         questions = await response.json();
