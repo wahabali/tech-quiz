@@ -1,0 +1,363 @@
+[
+  {
+    "question": "Which Spark runtime version in Microsoft Fabric supports Delta Lake 2.4 features like 'column mapping mode' and 'generated columns'?",
+    "options": [
+      "Runtime 1.0",
+      "Runtime 1.1",
+      "Runtime 1.2",
+      "Runtime 2.0"
+    ],
+    "answer": 2,
+    "explanation": "Runtime 1.2 in Fabric Spark supports Spark 3.4 and Delta Lake 2.4 which includes column mapping and advanced Delta features.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "What is the default behavior for Optimized Write in Microsoft Fabric Spark?",
+    "options": [
+      "Disabled by default and must be enabled explicitly",
+      "Only enabled for CSV formats",
+      "Enabled by default for all supported file formats",
+      "Enabled only in high-concurrency environments"
+    ],
+    "answer": 2,
+    "explanation": "Optimized Write is enabled by default in Fabric Spark for efficient write performance with Delta Lake.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "You're migrating from Azure Synapse to Fabric Spark. Which Spark feature is NOT yet supported in Fabric as of 2025?",
+    "options": [
+      "Spark Advisor",
+      "Log Analytics integration",
+      "Delta format tables",
+      "Livy API for Spark batch jobs"
+    ],
+    "answer": 1,
+    "explanation": "Log Analytics integration is available in Synapse Spark but not currently supported in Microsoft Fabric.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Which of the following best describes the V-Order optimization in Fabric Spark?",
+    "options": [
+      "Row-based sorting for high throughput",
+      "Clustered indexing for SQL analytics",
+      "Column reordering to improve data skipping in Parquet files",
+      "File compression for network transfer"
+    ],
+    "answer": 2,
+    "explanation": "V-Order rearranges column values during write to enable faster scanning and data skipping.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Why might a Fabric Spark user get an AnalysisException when trying to modify a Spark config?",
+    "options": [
+      "The session lacks RBAC permissions",
+      "The config is immutable",
+      "The config file format is not supported",
+      "The Fabric environment is in maintenance mode"
+    ],
+    "answer": 1,
+    "explanation": "Some Spark configs are immutable and cannot be changed at runtime, which leads to AnalysisException.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "What is the maximum number of nodes supported for a Small node size in a Custom Spark pool with F64 capacity in Fabric?",
+    "options": [
+      "64",
+      "32",
+      "16",
+      "200"
+    ],
+    "answer": 1,
+    "explanation": "A Small node consumes 4 vCores; with F64 (128 Spark vCores), you get 128/4 = 32 nodes.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Which of the following languages is not currently supported for Spark job definitions in Microsoft Fabric?",
+    "options": [
+      "Scala",
+      "R",
+      "Python",
+      "C#"
+    ],
+    "answer": 3,
+    "explanation": "Fabric Spark does not support .NET for Spark (C#), unlike Synapse Spark.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "How does Fabric handle library installation across notebooks and jobs in a consistent way?",
+    "options": [
+      "By using workspace-scoped packages",
+      "Via Spark cluster startup scripts",
+      "By using environment-level library installation",
+      "By preloading JARs via SQL endpoint"
+    ],
+    "answer": 2,
+    "explanation": "Environment-level library installation makes libraries available to all Spark sessions consistently.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "What tool in Fabric helps analyze and recommend optimizations for Spark jobs?",
+    "options": [
+      "Spark History Server",
+      "Fabric Profiler",
+      "Spark Advisor",
+      "Job Scheduler"
+    ],
+    "answer": 2,
+    "explanation": "Spark Advisor provides analysis and optimization suggestions for Spark workloads in Fabric.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Which notebook feature is available in Fabric but not in Azure Synapse?",
+    "options": [
+      "mssparkutils.env",
+      "Scheduled run",
+      "Pipeline integration",
+      "Import/export"
+    ],
+    "answer": 1,
+    "explanation": "Fabric notebooks support scheduled runs, while Synapse lacks this feature.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Which statement about Spark job definitions in Fabric is TRUE?",
+    "options": [
+      "They support retry policies and built-in scheduling",
+      "They must be triggered manually from notebooks",
+      "They require pipeline activity to run",
+      "They only support PySpark scripts"
+    ],
+    "answer": 0,
+    "explanation": "Spark job definitions support retry policies and can be scheduled without pipelines in Fabric.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "What is the minimum node count supported in a Fabric Spark pool?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": 1,
+    "explanation": "Fabric Spark pools support a minimum node count of 1, unlike Synapse which requires at least 3.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Which of the following is a key reason to use Spark over Dataflow Gen2 in Fabric?",
+    "options": [
+      "Spark supports only structured data",
+      "Dataflow does not allow scheduling",
+      "Spark is code-based and supports advanced transformation libraries",
+      "Dataflow lacks native Fabric integration"
+    ],
+    "answer": 2,
+    "explanation": "Spark provides advanced transformation and compute control via code, suitable for complex workflows.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "How does Fabric Spark handle scheduled execution of notebooks?",
+    "options": [
+      "Only via external Azure Scheduler",
+      "Manual run with CLI",
+      "Built-in support for scheduled runs",
+      "Not supported in Fabric"
+    ],
+    "answer": 2,
+    "explanation": "Fabric provides built-in support for scheduling notebooks to run at specified intervals.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Which Fabric Spark feature replaces Synapse's workspace identity-based Key Vault access?",
+    "options": [
+      "Inline secrets via %%key",
+      "Access via SparkR",
+      "mssparkutils.credentials.getSecret",
+      "SQL Credential Proxy"
+    ],
+    "answer": 2,
+    "explanation": "mssparkutils.credentials.getSecret is the supported way to retrieve secrets in Fabric Spark.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "In Fabric Spark, which file format is optimized with both V-Order and Optimized Write by default?",
+    "options": [
+      "CSV",
+      "Delta Lake",
+      "JSON",
+      "Avro"
+    ],
+    "answer": 1,
+    "explanation": "Delta Lake is the optimized format in Fabric using both V-Order and Optimized Write by default.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "What happens to a long-running Fabric Spark job after 90 days if retry policy is enabled?",
+    "options": [
+      "The job continues indefinitely",
+      "Retry policy deactivates and job must be restarted manually",
+      "The Spark cluster shuts down",
+      "An alert is sent to the workspace admin"
+    ],
+    "answer": 1,
+    "explanation": "Fabric retry policies expire after 90 days, after which the job must be restarted manually.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "How do you assign a custom Spark pool to a Livy API session in Fabric?",
+    "options": [
+      "Define it in notebook metadata",
+      "Use spark.conf.set(\"spark.livy.pool\")",
+      "Add spark.fabric.environmentDetails in payload JSON",
+      "Attach Spark environment via SQL endpoint"
+    ],
+    "answer": 2,
+    "explanation": "To assign a custom pool to a Livy session, include `spark.fabric.environmentDetails` in the JSON payload.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "What is a key benefit of using 'Shortcuts' in lakehouse Spark workflows in Fabric?",
+    "options": [
+      "It replaces the need for notebooks",
+      "Allows editing of remote data in place",
+      "References external data without physical copy",
+      "Generates schema automatically"
+    ],
+    "answer": 2,
+    "explanation": "Shortcuts let you reference external data sources (e.g., ADLS Gen2) without moving or duplicating data.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Which Spark configuration method allows for the greatest flexibility for ad-hoc testing of jobs in Fabric?",
+    "options": [
+      "Environment-level configuration",
+      "Workspace-level libraries",
+      "Inline Spark configuration",
+      "Fabric API/SDK injection"
+    ],
+    "answer": 2,
+    "explanation": "Inline Spark configuration (e.g., spark.conf.set) allows rapid testing and overrides within notebooks or job definitions.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  }
+
+  {
+    "question": "In Microsoft Fabric, which configuration method allows for the most reusable and consistent application of Spark settings across all jobs in a given setup?",
+    "options": [
+      "Inline configuration in notebooks",
+      "Spark session config via spark.conf.set()",
+      "Environment-level configuration",
+      "Pipeline-based Spark overrides"
+    ],
+    "answer": 2,
+    "explanation": "Environment-level Spark configuration is reusable across notebooks and Spark job definitions, ensuring consistency. Inline and session-level settings are job-specific.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "You are troubleshooting inconsistent job behavior in a Fabric Spark job. Which of the following could be the issue if you're using spark.conf.set to override a Spark configuration?",
+    "options": [
+      "The Spark config is missing from the workspace metadata",
+      "You exceeded concurrency limits",
+      "The configuration is immutable and cannot be changed at runtime",
+      "The Delta Lake version is incompatible with the Spark version"
+    ],
+    "answer": 2,
+    "explanation": "Certain Spark configurations are immutable and throw AnalysisException if overridden using spark.conf.set().",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "In a high concurrency Fabric Spark environment, what scheduler is used to manage resource allocation across concurrent jobs?",
+    "options": [
+      "FIFO Scheduler",
+      "Round Robin Scheduler",
+      "FAIR Scheduler",
+      "Dynamic Pool Scheduler"
+    ],
+    "answer": 2,
+    "explanation": "FAIR Scheduler is enabled by default in high concurrency mode in Fabric Spark to ensure resource fairness.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "A data engineer is running PySpark jobs in Fabric and notices that the retry policy stops functioning after a period. What is the root cause?",
+    "options": [
+      "Spark jobs cannot be retried in Fabric",
+      "Retry settings are only valid during the workspace session",
+      "Retry policies expire after 90 days",
+      "Retry policies are unsupported for PySpark jobs"
+    ],
+    "answer": 2,
+    "explanation": "Fabric Spark retry policies have a built-in limit of 90 days after which they expire automatically.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Which feature is unique to Fabric Spark and not available in Azure Synapse Spark regarding storage optimization?",
+    "options": [
+      "Parquet compression",
+      "Optimized Write",
+      "V-Order",
+      "Z-Ordering"
+    ],
+    "answer": 2,
+    "explanation": "V-Order is a Fabric-specific write-time optimization enabled by default, not available in Azure Synapse Spark.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "You want to ensure that a notebook in Microsoft Fabric shares libraries across all users and sessions within a Spark environment. Where should you install the library?",
+    "options": [
+      "Notebook inline via %%configure",
+      "Spark job definition arguments",
+      "Environment-level installation",
+      "User workspace level"
+    ],
+    "answer": 2,
+    "explanation": "Environment-level installation allows libraries to be shared across all notebooks and Spark job definitions in the environment.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Why might the %%configure magic command fail when trying to bring in a .jar file in Fabric notebooks?",
+    "options": [
+      "Spark 3.4 doesn't support %%configure",
+      "Inline configuration is deprecated in Fabric",
+      "This magic command is not fully supported in Fabric Spark",
+      "Fabric only supports Python libraries, not JAR files"
+    ],
+    "answer": 2,
+    "explanation": "The %%configure magic command is not fully supported in Fabric and should not be used to load .jar files.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "In Microsoft Fabric Spark, which of the following is TRUE regarding concurrency limits?",
+    "options": [
+      "They are fixed at 50 jobs per pool",
+      "They are dynamically throttled based on capacity SKUs",
+      "They only apply to notebooks and not Spark jobs",
+      "They can be extended by configuring workspace metadata"
+    ],
+    "answer": 1,
+    "explanation": "Fabric Spark uses dynamic reserve-based throttling determined by capacity SKUs, unlike fixed limits in Synapse.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "A user needs to run a Spark job using an external ADLS Gen2 reference. What must be ensured before referencing it in Fabric?",
+    "options": [
+      "The data must be copied to OneLake first",
+      "User must be in the Synapse workspace",
+      "Shortcut must be created in Lakehouse",
+      "Spark must be upgraded to 3.4"
+    ],
+    "answer": 2,
+    "explanation": "Shortcuts allow referencing external storage like ADLS Gen2 in Fabric without duplicating data.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  },
+  {
+    "question": "Which programming languages are supported for Spark job definitions in Microsoft Fabric?",
+    "options": [
+      "Python, Scala, R, .NET",
+      "Python, Scala, R",
+      "Python and C# only",
+      "SQL, Scala, R, .NET"
+    ],
+    "answer": 1,
+    "explanation": "Fabric Spark job definitions support Python, Scala, and R. .NET is not supported.",
+    "link": "https://learn.microsoft.com/en-us/fabric/data-engineering/"
+  }
+]
