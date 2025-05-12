@@ -1,62 +1,181 @@
 [
   {
-    "question": "A Fabric administrator observes that certain items in a domain are not inheriting the domain-level default sensitivity label as expected. Upon investigation, it's found that these items had labels applied automatically by a default label policy with higher priority. What is the most plausible explanation for this behavior?",
+    "question": "Which scenario best fits the use of Git-based deployments using build environments in Microsoft Fabric?",
     "options": [
-      "Domain-level default labels override all existing labels regardless of their origin or priority.",
-      "Automatically applied labels from default label policies with higher priority are retained, preventing the domain-level default label from being applied.",
-      "Manually applied labels are always overridden by domain-level default labels.",
-      "Domain-level default labels apply only to new items and do not affect existing items."
+      "You want to manually trigger deployments from Fabric UI without custom scripts.",
+      "You want to deploy unsupported items directly to the workspace from your local machine.",
+      "You need to run scripts to alter item configurations and adjust for stage-specific parameters before deployment.",
+      "You only use Git for version control and prefer to manually deploy content between environments."
     ],
-    "answer": 1,
-    "explanation": "Domain-level default sensitivity labels in Microsoft Fabric are applied based on a hierarchy of label priorities. If an item already has an automatically applied label from a default label policy with higher priority, the domain-level default label will not override it. This ensures that more specific or critical labeling policies take precedence over broader domain-level defaults. ",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/domain-default-sensitivity-label"
+    "answer": 2,
+    "explanation": "Git-based deployments using build environments allow scripted transformations like modifying lakehouseId or connectionId before deploying to each stage.",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
   },
   {
-    "question": "In Microsoft Fabric, what is the primary function of protected sensitivity labels when applied to items within the Fabric service?",
+    "question": "What happens if a Git-connected Fabric workspace and Git branch both contain content during initial sync?",
     "options": [
-      "They encrypt the content to prevent unauthorized access.",
-      "They control the ability to change or remove labels on items, but do not restrict access to the content itself.",
-      "They automatically classify data based on content inspection.",
-      "They enforce multi-factor authentication for accessing labeled items."
+      "The workspace is overwritten without confirmation.",
+      "Git content is always prioritized over workspace content.",
+      "You are prompted to choose the sync direction.",
+      "Unsupported items are automatically deleted from both sides."
     ],
-    "answer": 1,
-    "explanation": "Within the Fabric service, protected sensitivity labels are primarily used to control who can change or remove labels on items. They do not enforce encryption or restrict access to the content itself. This functionality ensures that only authorized users can modify the sensitivity classification of data, maintaining the integrity of data governance policies. ",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/protected-sensitivity-labels"
+    "answer": 2,
+    "explanation": "You must choose which direction to sync during initial connection to avoid data loss.",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
   },
   {
-    "question": "A user with multiple sensitivity label policies is creating a new Power BI report in Fabric. Each policy has a different default label configured. Which default label will be applied to the new report?",
+    "question": "Which condition must be met to commit workspace changes to Git in Fabric?",
     "options": [
-      "The default label from the policy with the lowest priority.",
-      "The default label from the policy with the highest priority.",
-      "No default label will be applied due to conflicting policies.",
-      "The user will be prompted to choose a default label."
+      "The user must have READ access to the Git repo only.",
+      "The user must be a workspace Viewer.",
+      "The user must be a Contributor in the workspace and have Contribute permission in Git.",
+      "The workspace must be in the production stage only."
     ],
-    "answer": 1,
-    "explanation": "When multiple sensitivity label policies apply to a user, Microsoft Fabric uses the policy with the highest priority to determine the default label. This approach ensures that the most critical or specific policy settings are enforced over more general ones. ",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/sensitivity-label-default-label-policy"
+    "answer": 2,
+    "explanation": "Committing requires both Contributor role in Fabric and Contribute permissions in Git.",
+    "link": "https://learn.microsoft.com/en-us/fabric/admin/git-integration-admin-settings"
   },
   {
-    "question": "An organization has enabled a mandatory label policy in Microsoft Fabric. What is a consequence of this policy for users working with supported item types?",
+    "question": "When should an organization prefer using Fabric deployment pipelines over Git-based pipelines?",
     "options": [
-      "Users can save new items without applying a sensitivity label.",
-      "Users must apply a sensitivity label before saving new or modified items.",
-      "Sensitivity labels are applied automatically without user intervention.",
-      "Users are restricted from creating new items in Fabric."
+      "When the deployment environments need to use custom scripts to change configurations.",
+      "When using Git as the only source of truth and needing full control over build pipelines.",
+      "When the deployment flow is managed directly within Fabric using built-in approval and deployment APIs.",
+      "When submodules and custom directory structures are required."
     ],
-    "answer": 1,
-    "explanation": "With a mandatory label policy enabled, users are required to apply a sensitivity label before they can save new items or modifications to existing items in Fabric. This enforcement ensures that all data is appropriately classified and protected according to the organization's governance policies. ",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/mandatory-label-policy"
+    "answer": 2,
+    "explanation": "Fabric pipelines are preferred for managing deployments within the Fabric UI with APIs and approval flows.",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
   },
   {
-    "question": "In the Microsoft Purview hub within Fabric, what is the purpose of the 'Items explorer' page?",
+    "question": "What is a key reason ISVs prefer the CI/CD option tailored for multi-customer deployment in Fabric?",
     "options": [
-      "To configure sensitivity labels for different domains.",
-      "To monitor and filter all items in the tenant using granular criteria.",
-      "To set up default label policies for the organization.",
-      "To manage user access permissions for Fabric items."
+      "It supports legacy workspace templates for all customers.",
+      "It enables parallel deployments to many workspaces with unique configurations.",
+      "It allows connecting the same Git branch to multiple workspaces simultaneously.",
+      "It uses Fabric-only features without requiring Git."
     ],
     "answer": 1,
-    "explanation": "The 'Items explorer' page in the Microsoft Purview hub allows administrators to monitor all items within the tenant using detailed filters. This functionality provides insights into data distribution, ownership, and labeling, aiding in effective data governance. ",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/use-microsoft-purview-hub?tabs=overview"
-  }
-]
+    "explanation": "ISVs benefit from scaling deployments to many customer-specific workspaces using tailored config and parallel releases.",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
+  },
+  {
+    "question": "What does the orange 'X' icon between stages in a Fabric deployment pipeline indicate?",
+    "options": [
+      "The deployment pipeline has failed.",
+      "The pipeline stages are missing mandatory metadata.",
+      "The content differs between the stages and requires review.",
+      "The Git branch has not been synced recently."
+    ],
+    "answer": 2,
+    "explanation": "An orange 'X' shows differences exist between stages and may require deployment or review.",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
+  },
+  {
+    "question": "Which of the following is NOT a supported Git provider for Microsoft Fabric Git integration?",
+    "options": [
+      "Azure DevOps",
+      "GitHub",
+      "Bitbucket",
+      "GitHub Enterprise (Cloud)"
+    ],
+    "answer": 2,
+    "explanation": "Bitbucket is not supported by Fabric. Only Azure DevOps and GitHub are.",
+    "link": "https://learn.microsoft.com/en-us/fabric/admin/git-integration-admin-settings"
+  },
+  {
+    "question": "Why might you see a Git status of 'Update required' on an item in a Fabric workspace?",
+    "options": [
+      "The item is no longer supported by Git integration.",
+      "The item has been modified in both Git and Fabric simultaneously.",
+      "The item in Git was updated, and the workspace version is outdated.",
+      "The item exceeds the Git size limit."
+    ],
+    "answer": 2,
+    "explanation": "This occurs when the Git repo contains newer changes than the Fabric workspace version.",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
+  },
+  {
+    "question": "Which of the following would cause a Git commit in Fabric to fail?",
+    "options": [
+      "The branch has less than 10 items.",
+      "The workspace is in trial mode.",
+      "The commit size exceeds 125 MB.",
+      "You are a Contributor in the workspace."
+    ],
+    "answer": 2,
+    "explanation": "Fabric enforces a 125 MB commit size limit for workspace syncs.",
+    "link": "https://learn.microsoft.com/en-us/fabric/admin/git-integration-admin-settings"
+  },
+  {
+    "question": "Why would an ISV use API calls in Fabric after deploying content to a customer workspace?",
+    "options": [
+      "To refresh premium capacity settings.",
+      "To ingest customer-specific data or adjust workspace configurations.",
+      "To create new Git repositories for customers.",
+      "To upgrade GitHub authentication tokens."
+    ],
+    "answer": 1,
+    "explanation": "ISVs use APIs to set configurations and ingest customer-specific data after deployment.",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
+  },
+  {
+    "question": "Which limitation applies when branching out to a new workspace in Fabric?",
+    "options": [
+      "The workspace must not be in a Fabric capacity.",
+      "Only one Git-supported item can be included.",
+      "Only admins can view the related Git branches.",
+      "Only Git-supported items are copied to the new workspace."
+    ],
+    "answer": 3,
+    "explanation": "Only supported items are transferred to a new workspace during a branch-out.",
+    "link": "https://learn.microsoft.com/en-us/fabric/admin/git-integration-admin-settings"
+  },
+  {
+    "question": "Which Fabric CI/CD option is ideal when each environment requires separate configurations and transformation scripts during deployment?",
+    "options": [
+      "Fabric deployment pipelines only",
+      "Git-based deployments with no build environment",
+      "Git-based deployments using build environments",
+      "ISV deployment pipelines with GitHub Actions"
+    ],
+    "answer": 2,
+    "explanation": "Build environments support scripts to customize deployments per stage (e.g. different configs).",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
+  },
+  {
+    "question": "In Microsoft Fabric Git integration, what causes a file to be renamed in the Git folder using a GUID?",
+    "options": [
+      "The file is older than 90 days.",
+      "The item's display name contains invalid characters.",
+      "The user has insufficient permission to rename.",
+      "The file contains unsupported metadata."
+    ],
+    "answer": 1,
+    "explanation": "Fabric assigns a GUID if an item's display name has invalid or disallowed characters.",
+    "link": "https://learn.microsoft.com/en-us/fabric/admin/git-integration-admin-settings"
+  },
+  {
+    "question": "Which type of Git branching strategy aligns best with Git-based deployments that do not use build environments?",
+    "options": [
+      "Trunk-based development",
+      "Gitflow with multiple primary branches",
+      "Mono-repo strategy",
+      "Feature-based dynamic environments"
+    ],
+    "answer": 1,
+    "explanation": "Gitflow allows managing Dev/Test/Prod branches feeding directly into different Fabric environments.",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
+  },
+  {
+    "question": "What does the 'Source control icon' in Fabric indicate when it shows a value other than 0?",
+    "options": [
+      "There are conflicts between tenant settings.",
+      "There are unsynced or changed items in the workspace or Git repo.",
+      "The workspace is not eligible for branching.",
+      "The Git repo connection has been lost."
+    ],
+    "answer": 1,
+    "explanation": "Any number other than 0 means there are differences between workspace and Git status.",
+    "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
+  },
