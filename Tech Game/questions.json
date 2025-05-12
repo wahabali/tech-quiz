@@ -179,3 +179,16 @@
     "explanation": "Any number other than 0 means there are differences between workspace and Git status.",
     "link": "https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration"
   },
+  {
+    "question": "Which Fabric item is explicitly unsupported for commit/export via Git integration?",
+    "options": [
+      "Dataflow Gen2",
+      ".pbix files",
+      "KQL Queryset",
+      "Lakehouse"
+    ],
+    "answer": 1,
+    "explanation": ".pbix files are unsupported in Git integration and are not exported or imported.",
+    "link": "https://learn.microsoft.com/en-us/fabric/admin/git-integration-admin-settings"
+  }
+]
