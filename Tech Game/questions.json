@@ -1,74 +1,62 @@
 [
   {
-    "question": "What is the primary purpose of Microsoft Fabric's governance and compliance features?",
+    "question": "A Fabric administrator observes that certain items in a domain are not inheriting the domain-level default sensitivity label as expected. Upon investigation, it's found that these items had labels applied automatically by a default label policy with higher priority. What is the most plausible explanation for this behavior?",
     "options": [
-      "To enhance user interface customization",
-      "To manage, protect, monitor, and improve discoverability of sensitive information",
-      "To increase storage capacity",
-      "To automate report generation"
+      "Domain-level default labels override all existing labels regardless of their origin or priority.",
+      "Automatically applied labels from default label policies with higher priority are retained, preventing the domain-level default label from being applied.",
+      "Manually applied labels are always overridden by domain-level default labels.",
+      "Domain-level default labels apply only to new items and do not affect existing items."
     ],
     "answer": 1,
-    "explanation": "Microsoft Fabric's governance and compliance capabilities help manage, protect, monitor, and improve the discoverability of an organization's sensitive information.",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/governance-compliance-overview"
+    "explanation": "Domain-level default sensitivity labels in Microsoft Fabric are applied based on a hierarchy of label priorities. If an item already has an automatically applied label from a default label policy with higher priority, the domain-level default label will not override it. This ensures that more specific or critical labeling policies take precedence over broader domain-level defaults. ",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/domain-default-sensitivity-label"
   },
   {
-    "question": "What are the two main tabs featured in the OneLake catalog?",
+    "question": "In Microsoft Fabric, what is the primary function of protected sensitivity labels when applied to items within the Fabric service?",
     "options": [
-      "Data and Reports",
-      "Explore and Govern",
-      "Settings and Configuration",
-      "Users and Permissions"
+      "They encrypt the content to prevent unauthorized access.",
+      "They control the ability to change or remove labels on items, but do not restrict access to the content itself.",
+      "They automatically classify data based on content inspection.",
+      "They enforce multi-factor authentication for accessing labeled items."
     ],
     "answer": 1,
-    "explanation": "The OneLake catalog features two tabs: Explore, for finding and using Fabric items, and Govern, for analyzing and monitoring data governance.",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/onelake-catalog-overview"
+    "explanation": "Within the Fabric service, protected sensitivity labels are primarily used to control who can change or remove labels on items. They do not enforce encryption or restrict access to the content itself. This functionality ensures that only authorized users can modify the sensitivity classification of data, maintaining the integrity of data governance policies. ",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/protected-sensitivity-labels"
   },
   {
-    "question": "What functionality does the 'Explore' tab in the OneLake catalog provide?",
+    "question": "A user with multiple sensitivity label policies is creating a new Power BI report in Fabric. Each policy has a different default label configured. Which default label will be applied to the new report?",
     "options": [
-      "It allows users to configure security settings",
-      "It provides insights into data governance",
-      "It helps users find, explore, and use Fabric items with filters and selectors",
-      "It manages user roles and permissions"
-    ],
-    "answer": 2,
-    "explanation": "The 'Explore' tab helps users find, explore, and use Fabric items, offering filters and selectors to narrow down the list.",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/onelake-catalog-explore"
-  },
-  {
-    "question": "What insights does the 'Govern' tab in the OneLake catalog offer?",
-    "options": [
-      "User activity logs",
-      "Data storage metrics",
-      "Governance status of data and recommended actions for improvement",
-      "System performance statistics"
-    ],
-    "answer": 2,
-    "explanation": "The 'Govern' tab provides insights into the governance status of data and presents recommended actions to improve data governance.",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/onelake-catalog-govern"
-  },
-  {
-    "question": "How does Microsoft Purview integrate with Microsoft Fabric?",
-    "options": [
-      "By providing additional storage options",
-      "Through seamless integration allowing governance of data lineage and metadata",
-      "By enhancing the user interface",
-      "Through offering advanced analytics tools"
+      "The default label from the policy with the lowest priority.",
+      "The default label from the policy with the highest priority.",
+      "No default label will be applied due to conflicting policies.",
+      "The user will be prompted to choose a default label."
     ],
     "answer": 1,
-    "explanation": "Microsoft Purview integrates with Microsoft Fabric to allow users to govern their entire data estate, including data lineage and metadata.",
-    "link": "https://learn.microsoft.com/en-us/fabric/governance/microsoft-purview-fabric"
+    "explanation": "When multiple sensitivity label policies apply to a user, Microsoft Fabric uses the policy with the highest priority to determine the default label. This approach ensures that the most critical or specific policy settings are enforced over more general ones. ",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/sensitivity-label-default-label-policy"
   },
   {
-    "question": "What is the purpose of registering a Microsoft Fabric tenant in Microsoft Purview?",
+    "question": "An organization has enabled a mandatory label policy in Microsoft Fabric. What is a consequence of this policy for users working with supported item types?",
     "options": [
-      "To enable user authentication",
-      "To capture metadata and lineage from Fabric items including Power BI",
-      "To increase data storage limits",
-      "To customize the Fabric user interface"
+      "Users can save new items without applying a sensitivity label.",
+      "Users must apply a sensitivity label before saving new or modified items.",
+      "Sensitivity labels are applied automatically without user intervention.",
+      "Users are restricted from creating new items in Fabric."
     ],
     "answer": 1,
-    "explanation": "Registering a Microsoft Fabric tenant in Microsoft Purview allows capturing metadata and lineage from Fabric items, including Power BI.",
-    "link": "https://learn.microsoft.com/en-us/purview/register-scan-fabric-tenant?context=%2Ffabric%2Fgovernance%2Fcontext%2Fcontext-purview&tabs=Scenario1"
+    "explanation": "With a mandatory label policy enabled, users are required to apply a sensitivity label before they can save new items or modifications to existing items in Fabric. This enforcement ensures that all data is appropriately classified and protected according to the organization's governance policies. ",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/mandatory-label-policy"
+  },
+  {
+    "question": "In the Microsoft Purview hub within Fabric, what is the purpose of the 'Items explorer' page?",
+    "options": [
+      "To configure sensitivity labels for different domains.",
+      "To monitor and filter all items in the tenant using granular criteria.",
+      "To set up default label policies for the organization.",
+      "To manage user access permissions for Fabric items."
+    ],
+    "answer": 1,
+    "explanation": "The 'Items explorer' page in the Microsoft Purview hub allows administrators to monitor all items within the tenant using detailed filters. This functionality provides insights into data distribution, ownership, and labeling, aiding in effective data governance. ",
+    "link": "https://learn.microsoft.com/en-us/fabric/governance/use-microsoft-purview-hub?tabs=overview"
   }
 ]
